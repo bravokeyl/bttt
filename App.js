@@ -12,6 +12,7 @@ import {
   PopularScreen,
   RegionsScreen,
   ArticleScreen,
+  ContributeScreen,
 } from './src/screens';
 
 // const DiscoverStack = createStackNavigator({
@@ -50,8 +51,8 @@ import {
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Discover: DiscoverScreen,
-    Genres: GenresScreen,
+    Explore: DiscoverScreen,
+    Categories: GenresScreen,
     Mine: MineScreen,
     Profile: ProfileScreen,
   },
@@ -61,23 +62,19 @@ const TabNavigator = createBottomTabNavigator(
         const {routeName} = navigation.state;
         let selectedIcon;
         let defaultIcon;
-        if (routeName === 'Discover') {
-          iconName = 'ios-globe';
+        if (routeName === 'Explore') {
           selectedIcon = require('./src/assets/ic_discover_selected.png');
           defaultIcon = require('./src/assets/ic_discover_default.png');
         }
-        if (routeName === 'Genres') {
-          iconName = `ios-radio`;
+        if (routeName === 'Categories') {
           selectedIcon = require('./src/assets/ic_genres_selected.png');
           defaultIcon = require('./src/assets/ic_genres_default.png');
         }
         if (routeName === 'Mine') {
-          iconName = `ios-bookmark`;
           selectedIcon = require('./src/assets/ic_favourite_selected.png');
           defaultIcon = require('./src/assets/ic_favourite_default.png');
         }
         if (routeName === 'Profile') {
-          iconName = `ios-person`;
           selectedIcon = require('./src/assets/ic_profile_selected.png');
           defaultIcon = require('./src/assets/ic_profile_default.png');
         }
@@ -115,7 +112,7 @@ const AppStack = createStackNavigator({
   regions: {
     screen: RegionsScreen,
     navigationOptions: ({navigation}) => ({
-      title: 'Regions',
+      title: 'Geographies',
       headerBackTitle: null,
     }),
   },
@@ -123,6 +120,13 @@ const AppStack = createStackNavigator({
     screen: ArticleScreen,
     navigationOptions: ({navigation}) => ({
       title: `${navigation.getParam('title') || null}`,
+      headerBackTitle: null,
+    }),
+  },
+  contribute: {
+    screen: ContributeScreen,
+    navigationOptions: ({navigation}) => ({
+      title: 'Join The Theatre Times',
       headerBackTitle: null,
     }),
   }

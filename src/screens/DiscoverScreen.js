@@ -14,9 +14,9 @@ import CarouselWrapper from '../components/CarouselWrapper';
 import articlesData from '../static/articles';
 import Section from '../components/Section';
 
-const chatIcon = require('../assets/chat-bubble-50.png');
+const worldMapIcon = require('../assets/world-map-128.png');
 const openBookIcon = require('../assets/ic_discount_discover.png');
-const coinIcon = require('../assets/ic_free_coin.png');
+const contributeIcon = require('../assets/community-96.png');
 const popularIcon = require('../assets/ic_ranking.png');
 
 const SLIDER_1_FIRST_ITEM = 1;
@@ -39,8 +39,8 @@ class DiscoverScreen extends React.Component {
       },
       {
         key: 'regions',
-        name: 'Community',
-        icon: chatIcon,
+        name: 'Geographies',
+        icon: worldMapIcon,
       },
       {
         key: 'free-now',
@@ -48,9 +48,9 @@ class DiscoverScreen extends React.Component {
         icon: openBookIcon,
       },
       {
-        key: 'coins',
-        name: 'Coins',
-        icon: coinIcon,
+        key: 'contribute',
+        name: 'Contribute',
+        icon: contributeIcon,
       },
     ];
     return (
